@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GID/GD AFAB Self Assessment</title>
+    <style>
+        body {
+            background-color: #111111;
+            /* display: flex; */
+            /* flex-direction: column; */
+            /* align-items: center; */
+            /* align-content: center; */
+            /* max-width: 60%; */
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+
+        h1, h2, h3, h4 {
+            text-align: center;
+            color: white;
+        }
+
+        #gid {
+            
+        }
+        
+        .question {
+            color: white;
+            background-color: #222222;
+            border: solid 2px black;
+            display: block;
+            padding: 20px;
+            margin: 5px;
+            /* width: fit-content; */
+            /* max-width: 40%; */
+        }
+
+        .question select {
+            color: black;
+            /* margin: 5px; */
+            display: block;
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+
+        .question label {
+            /* background-color: red; */
+            color: white;
+            display: block;
+            /* width: 80%; */
+        }
+    </style>
+
+    <script>
+        function processGD() {
+            let score = 0;
+            let questions_answered = 0;
+            for (let i = 1; i <= 27; i++) {
+                try {
+                    let value = document.getElementsByName(`question${i}`)[0].value;
+                    if (value != "") { questions_answered++; score+=parseInt(value) };
+                } catch {}
+            }
+            let divScore = score / questions_answered;
+            let dysphoric = divScore < 3 && "You appear to have GID/GD" || "You do not appear to have GID/GD";
+            alert(`${dysphoric}\n\nYour score was ${divScore}, anything less than 3 signals Gender Identity Disorder / Gender Dysphoria`)
+        }
+    </script>
+</head>
+<body>
+    <h1>Gender Identity Disorder / Gender Dysphoria Self Assessment Questionare</h1>
+    <h2>This is for AFAB (Assigned Female At Birth) users, to use the AMAB (Assigned Male At Birth) questionare, <a href="./amab.html">click here</a></h2>
+    <h3 style="color: red">This should NOT be used as a substitute for medical advice, its to give a basic idea</h3>
+    <h4 style="color: darkgoldenrod">I am aware that the majority of these questions are very 'binary' and outdated. These however, are taken from the GIDYQ-AA questionare from 2007</h4>
+    <form id="gid" onsubmit="processGD(); return false;">
+        <div class="question">
+            <label for="question1">
+                In the past 12 months, have you felt satisfied being a woman?
+            </label>
+        
+            <select name="question1" required>
+                <option selected value=""></option>
+                <option value="5">Always</option>
+                <option value="4">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="2">Rarely</option>
+                <option value="1">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question2">
+                In the past 12 months, have you felt uncertain about your gender, that
+is, feeling somewhere in between a woman and a man?
+            </label>
+        
+            <select name="question2" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question3">
+                In the past 12 months, have you felt uncertain about your gender, that
+is, feeling somewhere in between a woman and a man?
+            </label>
+        
+            <select name="question3" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question4">
+                In the past 12 months, have you felt, unlike most women, that you
+have to work at being a woman?
+            </label>
+        
+            <select name="question4" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question5">
+                In the past 12 months, have you felt that you were not a real woman?
+            </label>
+        
+            <select name="question5" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question6">
+                In the past 12 months, have you felt, given who you really are (e.g.,
+what you like to do, how you act with other people), that it would be
+better for you to live as a man rather than as a woman?
+            </label>
+        
+            <select name="question6" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question7">
+                In the past 12 months, have you had dreams?
+If NO, skip to Question 8.
+If YES: Have you been in your dreams?
+If NO, skip to Question 8.
+If YES: In the past 12 months, have you had dreams in which you were
+a man?
+            </label>
+        
+            <select name="question7">
+                <option selected value="">(Optional)</option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question8">
+                In the past 12 months, have you felt unhappy about being a woman?
+            </label>
+        
+            <select name="question8" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question9">
+                In the past 12 months, have you felt uncertain about yourself, at times
+feeling more like a man and at times feeling more like a woman?
+            </label>
+        
+            <select name="question9" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question10">
+                In the past 12 months, have you felt more like a man than like a
+woman?
+            </label>
+        
+            <select name="question10" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question11">
+                In the past 12 months, have you felt that you did not have anything in
+common with either men or women?
+            </label>
+        
+            <select name="question11" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question12">
+                In the past 12 months, have you been bothered by seeing yourself
+identified as female or having to check the box "F" for female on
+official forms (e.g., employment applications, driver's license,
+passport)?
+            </label>
+        
+            <select name="question12" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question13">
+                In the past 12 months, have you felt comfortable when using women's
+restrooms in public places?
+            </label>
+        
+            <select name="question13" required>
+                <option selected value=""></option>
+                <option value="5">Always</option>
+                <option value="4">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="2">Rarely</option>
+                <option value="1">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question14">
+                In the past 12 months, have strangers treated you as a man?
+            </label>
+        
+            <select name="question14" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question15">
+                In the past 12 months, at home, have people you know, such as friends
+or relatives, treated you as a man?
+            </label>
+        
+            <select name="question15" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question16">
+                In the past 12 months, have you had the wish or desire to be a man?
+            </label>
+        
+            <select name="question16" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question17">
+                In the past 12 months, at home, have you dressed and acted as a man?
+            </label>
+        
+            <select name="question17" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question18">
+                In the past 12 months, at parties or at other social gatherings, have you
+presented yourself as a man?
+            </label>
+        
+            <select name="question18" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question19">
+                In the past 12 months, at work or at school, have you presented
+yourself as a man?
+            </label>
+        
+            <select name="question19" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question20">
+                In the past 12 months, have you disliked your body because it is female
+(e.g., having breasts or having a vagina)?
+            </label>
+        
+            <select name="question20" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question21">
+                In the past 12 months, have you wished to have hormone treatment to
+change your body into a man's?
+            </label>
+        
+            <select name="question21" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question22">
+                In the past 12 months, have you wished to have an operation to
+change your body into a man's (e.g., to have your breasts removed or
+to have a penis made)?
+            </label>
+        
+            <select name="question22" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question23">
+                In the past 12 months, have you made an effort to change your legal
+sex (e.g., on a driver's licence or credit card)?
+            </label>
+        
+            <select name="question23" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question24">
+                In the past 12 months, have you thought of yourself as a
+"hermaphrodite" or an "intersex" rather than as a man or woman?
+            </label>
+        
+            <select name="question24" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question25">
+                In the past 12 months, have you thought of yourself as a
+"transgendered person"?
+            </label>
+        
+            <select name="question25" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question26">
+                In the past 12 months, have you thought of yourself as a man?
+            </label>
+        
+            <select name="question26" required>
+                <option selected value=""></option>
+                <option value="1">Always</option>
+                <option value="2">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="4">Rarely</option>
+                <option value="5">Never</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            <label for="question27">
+                In the past 12 months, have you thought of yourself as a woman?
+            </label>
+        
+            <select name="question27" required>
+                <option selected value=""></option>
+                <option value="5">Always</option>
+                <option value="4">Often</option>
+                <option value="3">Sometimes</option>
+                <option value="2">Rarely</option>
+                <option value="1">Never</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <button type="submit" value="submit">
+                Submit    
+            </button>
+        </div>
+    </form>
+</body>
+</html>
